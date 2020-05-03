@@ -2,7 +2,7 @@ FROM edenhill/kafkacat:1.5.0@sha256:05daf8af237495df2bc726427e421d101072cf2d2306
 
 COPY scripts/* /home/kafkacat/bin/
 
-RUN addgroup -S kafkacat && adduser -S appuser -G kafkacat; \
+RUN addgroup -S kafkacat && adduser -S kafkacat -G kafkacat; \
     apk add jq ; \
     chmod +x /home/kafkacat/bin/*.sh; \
     ln -s /home/kafkacat/bin/kcca.sh /usr/local/bin/kcca; \
